@@ -658,7 +658,7 @@ window.catalogoTCCs = [
         autor: "Luiz Henrique Delgado dos Santos; Maria Clara de Lima Selegaço; Maria Eduarda Fernandes; Maria Eduarda Pereira de Souza; Maria Elisa Rodrigues Pichiteli; Pedro Diego Ishiyama do Nascimento; Vitoria Ueler Antunes;",
         ano: 2025,
         orientador: "Alexsandro Casteliani, Matheus das Neves",
-        palavraschave: "Adubação orgânica; crescimento; Phaseolus vulgaris l.; cultivo; práticas sustentáveis",
+        palavraschave: "Adubação Orgânica; Crescimento; Phaseolus Vulgaris l.; Cultivo; Práticas Sustentáveis",
     }, 
     {
         titulo: "Continuação Protótipos Fluxo e Ozônio - 2025",
@@ -668,7 +668,7 @@ window.catalogoTCCs = [
         autor: "Abkelly Kauãny Oliveira Foge; Kauane Melo De Souza; Luana Góes Simião; Maria Júlia De Avila Choquetta; Sophia Lessa Vicente;",
         ano: 2025,
         orientador: "Alexsandro Casteliani, Matheus das Neves",
-        palavraschave: "Esterilização; Fluxo Laminar; Lixo Eletrônico; Ozônio. Protótipo",
+        palavraschave: "Esterilização; Fluxo Laminar; Lixo Eletrônico; Ozônio; Protótipo",
     },
 
 ];
