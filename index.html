@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo de TCCs - Meio Ambiente</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo"><img src="ImagemLogo/Logo_RIMA_1.png" alt="Logo RIMA"></div>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Início</a></li>
+        <li><a href="index.html" class="active">Catálogo</a></li>
+        <li><a href="Sobrenos.html">Sobre Nós</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Título -->
+<header class="page-header">
+ <section class="catalogo-header">
+ <h1>Catálogo de TCCs - Meio Ambiente</h1>
+ </section>
+ <p>Explore e pesquise os trabalhos desenvolvidos no curso.</p>
+ </header>
+
+<section class="search-area">
+    <div class="filter-controls"> <div class="search-input-container">
+            <input type="text" id="searchInput" placeholder="Pesquisar por palavra-chave...">
+            <i class="fi fi-rr-search"></i>
+        </div>
+
+        <div class="year-filter-container">
+            <select id="yearFilter">
+                <option value="">Todos os Anos</option>
+            </select>
+            <i class="fi fi-rr-calendar"></i>
+        </div>
+        
+    </div>
+  </section>
+
+  <!-- Lista de TCCs -->
+  <section id="previews" class="tcc-list">
+    <!-- Os cards são gerados dinamicamente pelo script.js -->
+  </section>
+
+  <!-- Scripts -->
+  <script src="catalog.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

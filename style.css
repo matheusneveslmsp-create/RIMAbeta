@@ -1,0 +1,672 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+    background: #f8f4eb;
+    color: #303030;
+    padding: 55px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: large;
+    position: relative; 
+    overflow: hidden; 
+}
+
+/* Este é o estilo DO CABEÇALHO DO CATÁLOGO (O que tem as folhas) */
+.page-header {
+    background: #f8f4eb;
+    background-image: url("ImagemLogo/Design sem nome (1).jpg"); /* 🚨 Use o caminho correto! */
+    
+    /* Configurações para a imagem de canto aparecer corretamente */
+    background-repeat: no-repeat; 
+    background-position: center; /* Centraliza a imagem no elemento */
+    background-size: cover; 
+    
+    color: #303030;
+    padding: 150px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: larger;
+    
+    /* Propriedades de Posicionamento */
+    position: relative; 
+    overflow: hidden; 
+}
+
+.result-title .highlight,
+.result-description .highlight {
+    background-color: #e9e4d8 !important;
+}
+
+.catalogo-header h1 {
+   font-size: 3.8rem;
+}
+
+/* Área de pesquisa */
+.search-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.search-input-container {
+    position: relative;
+    width: 100%;
+    max-width: 750px; /* antes 600px */
+}
+
+.search-input-container input {
+    width: 100%;
+    padding: 18px 24px; /* aumentou */
+    padding-right: 60px; /* mais espaço pro ícone */
+    border: 2px solid #303030;
+    border-radius: 50px;
+    font-size: 1.2rem; /* antes 1rem */
+    transition: all 0.3s ease;
+    background-color: #fff;
+    color: #303030;
+}
+
+.search-input-container input:focus {
+    outline: none;
+    border-color: #99aa45;
+    box-shadow: 0 0 8px rgba(153, 170, 69, 0.4);
+}
+
+.search-input-container i {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #303030;
+    font-size: 1.5rem; /* antes 1.2rem */
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* ================================
+   ÁREA DE LISTA DE TCCs (CATÁLOGO)
+================================ */
+.tcc-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* CARD DE TCC */
+.tcc-item {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Filete lateral de identidade */
+.tcc-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: #8da813;
+  border-radius: 18px 0 0 18px;
+  transition: width 0.3s ease;
+}
+
+/* Hover suave */
+.tcc-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.tcc-item:hover::before {
+  width: 10px;
+}
+
+/* Conteúdo interno */
+.tcc-content {
+  padding: 25px 30px 30px 40px;
+  flex-grow: 1;
+}
+
+/* Título */
+.tcc-item h3 {
+  font-size: 1.4rem;
+  color: #303030;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Curso / categoria */
+.tcc-item .curso {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #8da813;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Descrição */
+.tcc-item p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Informações extras */
+.tcc-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 15px;
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.tcc-info span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f8f4eb;
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+/* Ícones (caso use) */
+.tcc-info i {
+  color: #8da813;
+}
+
+/* Botão de ficha/cartão */
+.tcc-footer {
+  border-top: 1px solid #eee;
+  padding: 22px 36px; /* mais espaçamento */
+  text-align: right;
+  background-color: #fafaf9;
+}
+
+.tcc-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #8da813;
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 26px; /* maior */
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.05rem; /* antes 0.95rem */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.tcc-footer a:hover {
+  background-color: #99aa45;
+  transform: translateY(-3px);
+}
+
+#pdf-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+  background-color: #f9fdf9;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 3rem 0 0rem;
+    min-height: 80px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+.navbar .logo {
+    margin-right: auto;
+    height: 110px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    max-height: 175%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.navbar ul li a {
+    color: #303030;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: larger;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #99aa45;
+    transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(0, 77, 0, 0.7), rgba(0, 77, 0, 0.7)), url('img/bg-hero.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  background: #66bb6a;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.hero .btn:hover {
+  background: #388e3c;
+  transform: scale(1.05);
+}
+
+/* Sobre nós */
+.sobre {
+  padding: 60px 20px;
+  background: #e8f5e9;
+  text-align: center;
+}
+
+.sobre-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sobre h2 {
+  font-size: 2rem;
+  color: #1b5e20;
+  margin-bottom: 20px;
+}
+
+.sobre p {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+  background:#8da813 ;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+.search-area {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.search-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 750px; /* aumentado */
+}
+
+#searchInput {
+  width: 100%;
+  padding: 20px 25px 20px 60px;
+  border-radius: 60px;
+  border: 2px solid #ccc;
+  font-size: 1.25rem;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color:#8da813;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1.5rem;
+}
+
+/* Botões de resultado */
+.result-file {
+    display: inline-flex; 
+    align-items: center;
+    gap: 10px; 
+    background-color: #8da813;
+    color: #fff; 
+    padding: 14px 26px;
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.12); 
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.result-file:hover {
+    transform: translateY(-3px);
+}
+
+.result-title {
+  font-weight: bold; 
+  font-size: 22px;
+}
+
+/* Página Sobre Nós */
+.hero-about {
+    background-image: url("ImagemLogo/Design sem nome.jpg");
+    color: #303030;
+    text-align: center;
+    padding: 120px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.hero-about h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero-about p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    max-width: 700px;
+}
+
+/* Seção de Conteúdo */
+.about-content {
+    padding: 60px 20px;
+    background-color: #f7f9fc;
+}
+
+.about-content .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-section {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.about-section h2 {
+    font-size: 2.2rem;
+    color: #8da813;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.about-section h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #8da813;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 2px;
+}
+
+.about-section p {
+    font-size: 19px;
+    color: #303030;
+    line-height: 1.7;
+}
+
+/* Seção da Equipe */
+.team-section h2 {
+    text-align: center;
+}
+
+.team-section h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.member-card {
+    
+    background-image: url("ImagemLogo/Design sem nome (2).jpg");
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.member-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #8da813;
+    margin-bottom: 15px;
+}
+
+.member-card h3 {
+    font-size: 1.3rem;
+    color: #303030;
+    margin-bottom: 5px;
+}
+
+.member-card p {
+    font-size: 1.2rem;
+    color: #303030;
+    margin: 0;
+}
+
+/* ===== ANIMAÇÃO FADE IN (adicionada) ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* aplica fade-in nos cards e botões (não na barra de pesquisa) */
+.tcc-item,
+.tcc-footer a,
+.result-file {
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+/* Garante que o cabeçalho possa ser a referência para o posicionamento absoluto da folha */
+header {
+    position: relative; /* Essencial para que a folha seja posicionada em relação a este header */
+    overflow: hidden; /* Opcional: Se a folha sair muito, isto a corta */
+}
+
+
+/* Container de Controles (mantém a coluna, mas centraliza tudo) */
+.filter-controls {
+    display: flex;
+    flex-direction: column; /* Coloca o filtro abaixo da busca */
+    gap: 15px; 
+    width: 100%;
+    max-width: 750px; /* Mantém o tamanho total da área de pesquisa */
+    align-items: center; 
+}
+
+/* Barra de Pesquisa (Voltando ao tamanho 'Normal') */
+.search-input-container {
+    position: relative;
+    width: 100%;
+    max-width: none; 
+}
+
+.search-input-container input {
+    width: 100%;
+    padding: 18px 24px; /* 🚨 REVERTIDO para o tamanho original */
+    padding-right: 60px; /* Mais espaço pro ícone */
+    border: 2px solid #303030;
+    border-radius: 50px;
+    font-size: 1.2rem; /* 🚨 REVERTIDO para o tamanho original */
+   
+}
+
+.search-input-container i {
+    right: 25px; /* Posição do ícone de busca */
+    font-size: 1.5rem; /* Revertido */
+}
+
+/* Filtro de Ano (Estilo e Posicionamento) */
+
+.year-filter-container {
+    position: relative;
+    width: 100%; 
+    max-width: 200px; /* 🚨 Mantém o filtro menor e centralizado */
+    flex-shrink: 0;
+}
+
+#yearFilter {
+    width: 100%;
+    padding: 14px 20px; 
+    padding-right: 40px; 
+    border-radius: 50px; /* 🚨 Bordas Redondas */
+    font-size: 1.1rem; 
+    background-color: #fff;
+    color: #706c6c;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    cursor: pointer;
+     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+#yearFilter:focus {
+    outline: none;
+    border-color: #99aa45;
+    box-shadow: 0 0 8px rgba(153, 170, 69, 0.4);
+}
+
+/* Ícone de Calendário (DENTRO do campo) */
+.year-filter-container .fi {
+    position: absolute;
+    right: 15px; /* Posição à direita DENTRO do campo */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #303030;
+    font-size: 1.1rem;
+    pointer-events: none;
+}
